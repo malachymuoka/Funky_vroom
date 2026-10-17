@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bo3y0pnal6j3x"]
+
+[ext_resource type="Texture2D" uid="uid://dhojdb7q2oyn8" path="res://graphics/stuff_I_made/uhhub-pixilart-4.png" id="1_qrphn"]
+[ext_resource type="Script" uid="uid://qvlkxehrb6k0" path="res://key_for_chain_event.gd" id="1_uffjt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uffjt"]
+size = Vector2(20, 32)
+
+[node name="key_for_chain_event" type="Node2D" unique_id=1902643477]
+script = ExtResource("1_uffjt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=955859598]
+position = Vector2(-10, -6)
+texture = ExtResource("1_qrphn")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1005622107]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=247413976]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_uffjt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

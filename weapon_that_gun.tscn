@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://tc062oclebrh"]
+
+[ext_resource type="Texture2D" uid="uid://cgaq0qf5e0rgn" path="res://graphics/stuff_I_made/weed-pixilart.png" id="1_avn6t"]
+[ext_resource type="Script" uid="uid://rrwl4kdb3sny" path="res://weapon_that_gun.gd" id="1_vlrvf"]
+
+[node name="Bullet_buster" type="Node2D" unique_id=1734557875]
+script = ExtResource("1_vlrvf")
+
+[node name="pew_pew" type="Sprite2D" parent="." unique_id=1928484040]
+scale = Vector2(0.3, 0.31)
+texture = ExtResource("1_avn6t")
+
+[node name="Timer" type="Timer" parent="." unique_id=1019410818]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

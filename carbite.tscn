@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://djnxh0jboiylp"]
+
+[ext_resource type="Script" uid="uid://bm76jmnq4wfs6" path="res://carbite.gd" id="1_d8q8n"]
+[ext_resource type="Texture2D" uid="uid://bgx032yxulm5n" path="res://graphics/stuff_for_the_endgame/carbinjor_chuglings-pixilart-2.png" id="1_naaal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d8q8n"]
+size = Vector2(21, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d8q8n"]
+radius = 31.0
+
+[node name="carbite" type="Node2D" unique_id=1032772015]
+script = ExtResource("1_d8q8n")
+
+[node name="the_car_sprite" type="Sprite2D" parent="." unique_id=1324569170]
+texture = ExtResource("1_naaal")
+
+[node name="pain" type="Area2D" parent="." unique_id=1218667031]
+collision_layer = 68
+collision_mask = 33
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pain" unique_id=1906800488]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_d8q8n")
+
+[node name="slow_down" type="Area2D" parent="." unique_id=1676071252]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="slow_down" unique_id=1598629831]
+shape = SubResource("CircleShape2D_d8q8n")
+
+[node name="knock_back_duration" type="Timer" parent="." unique_id=917023734]
+
+[connection signal="area_entered" from="pain" to="." method="_on_pain_area_entered"]
+[connection signal="body_entered" from="slow_down" to="." method="_on_slow_down_body_entered"]
+[connection signal="body_exited" from="slow_down" to="." method="_on_slow_down_body_exited"]
+[connection signal="timeout" from="knock_back_duration" to="." method="_on_knock_back_duration_timeout"]

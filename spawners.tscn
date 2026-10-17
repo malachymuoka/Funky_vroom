@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://rxqrhdxpyo74"]
+
+[ext_resource type="PackedScene" uid="uid://bitqha7c4lsdx" path="res://spawn_car.tscn" id="1_6y5vj"]
+
+[node name="spawners" type="Node2D" unique_id=304576061]
+
+[node name="spawn_car2" parent="." unique_id=426670935 instance=ExtResource("1_6y5vj")]
+position = Vector2(171, 151)
+
+[node name="spawn_car" parent="." unique_id=1820280933 instance=ExtResource("1_6y5vj")]
+position = Vector2(173, 102)
+
+[node name="spawn_car3" parent="." unique_id=1912161733 instance=ExtResource("1_6y5vj")]
+position = Vector2(161, -10)

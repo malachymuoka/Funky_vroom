@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ctnxmpvekxxpa"]
+
+[ext_resource type="Texture2D" uid="uid://cy43uf5j3png5" path="res://graphics/stuff_I_made/uhhub-pixilart.png" id="1_a8kpj"]
+[ext_resource type="Script" uid="uid://b3vm24w1c6rrv" path="res://da_key.gd" id="1_xlrh1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8kpj"]
+size = Vector2(22.17863, 22.366037)
+
+[node name="da_key" type="Node2D" unique_id=172928687]
+scale = Vector2(1.2554672, 1.5111266)
+script = ExtResource("1_xlrh1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1297140904]
+self_modulate = Color(1, 1, 1, 0.5803922)
+scale = Vector2(0.22663349, 0.1249239)
+texture = ExtResource("1_a8kpj")
+
+[node name="collect_da_key" type="Area2D" parent="." unique_id=795029586]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collect_da_key" unique_id=396249760]
+position = Vector2(-1, 0.49999997)
+scale = Vector2(0.21047205, 0.1861938)
+shape = SubResource("RectangleShape2D_a8kpj")
+
+[connection signal="body_entered" from="collect_da_key" to="." method="_on_collect_da_key_body_entered"]

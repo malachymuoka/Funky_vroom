@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b6nrs8pou8jva"]
+
+[ext_resource type="Texture2D" uid="uid://cjsa11kfebh4b" path="res://graphics/stuff_for_the_endgame/carbinjor_chuglings-pixilart.png" id="1_higja"]
+[ext_resource type="Script" uid="uid://d3myv8wh0shig" path="res://small_axe.gd" id="1_uh5yb"]
+[ext_resource type="Texture2D" uid="uid://bekk6q782nxv2" path="res://graphics/stuff_for_the_endgame/gy-pixilart.png" id="2_mm8dr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uh5yb"]
+radius = 22.671568
+
+[node name="small_axe" type="Node2D" unique_id=1402818021]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_uh5yb")
+
+[node name="normal_axe" type="Node2D" parent="." unique_id=1663514582]
+
+[node name="axe" type="Sprite2D" parent="normal_axe" unique_id=976403253]
+position = Vector2(0, -11)
+texture = ExtResource("1_higja")
+
+[node name="spinning_axe" type="Node2D" parent="." unique_id=1352271721]
+
+[node name="spinnn!" type="Sprite2D" parent="spinning_axe" unique_id=2061903007]
+texture = ExtResource("2_mm8dr")
+
+[node name="Area2D" type="Area2D" parent="spinning_axe" unique_id=1033190697]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spinning_axe/Area2D" unique_id=1457941472]
+shape = SubResource("CircleShape2D_uh5yb")

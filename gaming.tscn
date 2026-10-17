@@ -1,0 +1,214 @@
+[gd_scene format=3 uid="uid://c5r0dswb0ofil"]
+
+[ext_resource type="PackedScene" uid="uid://dhi1amaydc611" path="res://box_for_game.tscn" id="1_07ids"]
+[ext_resource type="Script" uid="uid://c8cy7xjsyhkqc" path="res://gaming.gd" id="1_vrf7n"]
+[ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/objects/map.png" id="1_vrkqe"]
+[ext_resource type="PackedScene" uid="uid://bjy1c24lq0gf7" path="res://player.tscn" id="2_v6ogp"]
+[ext_resource type="PackedScene" uid="uid://bpx081nwn0eth" path="res://details.tscn" id="3_fu2h4"]
+[ext_resource type="Script" uid="uid://cwwaxgpojojb0" path="res://finish.gd" id="5_wemkt"]
+[ext_resource type="Script" uid="uid://b1trtdy7747jp" path="res://welcome.gd" id="6_go1m8"]
+[ext_resource type="Texture2D" uid="uid://58kopy31xbf8" path="res://graphics/objects/taxi.png" id="8_1wqe7"]
+[ext_resource type="Texture2D" uid="uid://dxciltwc3sgll" path="res://graphics/objects/house2.png" id="8_7qkgc"]
+[ext_resource type="Texture2D" uid="uid://ch1ttx24yho5l" path="res://graphics/stuff_I_made/uhhub-pixilart-5.png" id="10_xa83o"]
+[ext_resource type="PackedScene" uid="uid://ifeuunok320n" path="res://charbinger.tscn" id="11_jylbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrf7n"]
+size = Vector2(193, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jylbp"]
+size = Vector2(42, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xa83o"]
+size = Vector2(62.5, 18.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qkgc"]
+size = Vector2(32, 26)
+
+[node name="Gaming" type="Node2D" unique_id=1081709332]
+process_mode = 3
+script = ExtResource("1_vrf7n")
+metadata/_edit_vertical_guides_ = [101.0]
+metadata/_edit_horizontal_guides_ = [611.0]
+
+[node name="Map" type="Sprite2D" parent="." unique_id=680936858]
+texture_filter = 1
+position = Vector2(192.5, 323.49997)
+scale = Vector2(1.0026041, 1.0140624)
+texture = ExtResource("1_vrkqe")
+
+[node name="timers" type="Node" parent="." unique_id=1842004530]
+
+[node name="tim" type="Timer" parent="timers" unique_id=1853625625]
+wait_time = 0.3
+autostart = true
+
+[node name="places_where_cars_spawn" type="Node2D" parent="." unique_id=2020141592]
+position = Vector2(193, 329)
+
+[node name="Marker2D5" type="Marker2D" parent="places_where_cars_spawn" unique_id=1301859527]
+position = Vector2(-194, 157)
+
+[node name="Marker2D2" type="Marker2D" parent="places_where_cars_spawn" unique_id=1050389253]
+position = Vector2(193, 109)
+
+[node name="Marker2D6" type="Marker2D" parent="places_where_cars_spawn" unique_id=43358302]
+position = Vector2(-195, 89)
+
+[node name="Marker2D3" type="Marker2D" parent="places_where_cars_spawn" unique_id=1198115369]
+position = Vector2(-194, -28)
+
+[node name="Marker2D7" type="Marker2D" parent="places_where_cars_spawn" unique_id=1286353779]
+position = Vector2(193, -1)
+
+[node name="Marker2D8" type="Marker2D" parent="places_where_cars_spawn" unique_id=90640770]
+position = Vector2(190, -103)
+
+[node name="Marker2D9" type="Marker2D" parent="places_where_cars_spawn" unique_id=1905837949]
+position = Vector2(192, -123)
+
+[node name="Marker2D4" type="Marker2D" parent="places_where_cars_spawn" unique_id=812919962]
+position = Vector2(193, -57)
+
+[node name="Marker2D" type="Marker2D" parent="places_where_cars_spawn" unique_id=1603265893]
+position = Vector2(193, 136)
+
+[node name="invisible_triggers_or_borders" type="Node2D" parent="." unique_id=2096710675]
+position = Vector2(193, 329)
+
+[node name="box_for_game" parent="invisible_triggers_or_borders" unique_id=1693485414 instance=ExtResource("1_07ids")]
+position = Vector2(0, -2)
+
+[node name="hello" type="Area2D" parent="invisible_triggers_or_borders" unique_id=1652088260]
+position = Vector2(-96, 199)
+collision_layer = 2
+script = ExtResource("6_go1m8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="invisible_triggers_or_borders/hello" unique_id=2129000508]
+position = Vector2(0, 23)
+shape = SubResource("RectangleShape2D_vrf7n")
+
+[node name="finish" type="Area2D" parent="invisible_triggers_or_borders" unique_id=1648701340]
+position = Vector2(-2, -277)
+script = ExtResource("5_wemkt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="invisible_triggers_or_borders/finish" unique_id=2114666092]
+position = Vector2(0, -53)
+polygon = PackedVector2Array(-189, 2, -190, 126, -83, 126, -83, 92, 118, 92, 117, 123, 194, 125, 193, 0)
+
+[node name="to_shop" type="Area2D" parent="invisible_triggers_or_borders" unique_id=1946907573]
+position = Vector2(-193, -329)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="invisible_triggers_or_borders/to_shop" unique_id=832279118]
+position = Vector2(233, 596)
+shape = SubResource("RectangleShape2D_jylbp")
+
+[node name="objects_for_game" type="Node2D" parent="." unique_id=668149240]
+y_sort_enabled = true
+scale = Vector2(1.0005887, 0.9997601)
+
+[node name="player" parent="objects_for_game" unique_id=1509924140 instance=ExtResource("2_v6ogp")]
+position = Vector2(324, 627)
+
+[node name="Details" parent="objects_for_game" unique_id=2130596754 instance=ExtResource("3_fu2h4")]
+position = Vector2(270, 533)
+
+[node name="buildings" type="Node2D" parent="objects_for_game" unique_id=389128556]
+y_sort_enabled = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="objects_for_game/buildings" unique_id=1304365298]
+position = Vector2(162, 369)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="objects_for_game/buildings/StaticBody2D2" unique_id=1221524631]
+position = Vector2(-1.4374994, -21)
+scale = Vector2(0.78593755, 1)
+texture = ExtResource("8_7qkgc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_for_game/buildings/StaticBody2D2" unique_id=1215159027]
+position = Vector2(-1.25, 11.375)
+shape = SubResource("RectangleShape2D_xa83o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="objects_for_game/buildings" unique_id=342781366]
+position = Vector2(33, 369)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="objects_for_game/buildings/StaticBody2D" unique_id=557645902]
+position = Vector2(-1.4374994, -22.5)
+scale = Vector2(0.78593755, 1.0267857)
+texture = ExtResource("8_7qkgc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_for_game/buildings/StaticBody2D" unique_id=228418808]
+position = Vector2(-1.5, 11.5)
+shape = SubResource("RectangleShape2D_xa83o")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="objects_for_game/buildings" unique_id=1355332440]
+position = Vector2(284, 368)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="objects_for_game/buildings/StaticBody2D3" unique_id=1207502847]
+position = Vector2(-1.4374994, -21)
+scale = Vector2(0.78593755, 1)
+texture = ExtResource("8_7qkgc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_for_game/buildings/StaticBody2D3" unique_id=560860551]
+position = Vector2(-1.25, 11.375)
+shape = SubResource("RectangleShape2D_xa83o")
+
+[node name="parked_cars" type="Node2D" parent="objects_for_game" unique_id=1844374453]
+y_sort_enabled = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="objects_for_game/parked_cars" unique_id=1803852919]
+y_sort_enabled = true
+position = Vector2(336, 386)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="objects_for_game/parked_cars/StaticBody2D3" unique_id=1232428309]
+position = Vector2(0.2701404, 2.6865826)
+scale = Vector2(2.25, 1.6666636)
+texture = ExtResource("8_1wqe7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_for_game/parked_cars/StaticBody2D3" unique_id=106252524]
+position = Vector2(0.2701416, -0.8134155)
+shape = SubResource("RectangleShape2D_7qkgc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="objects_for_game/parked_cars" unique_id=520006125]
+y_sort_enabled = true
+position = Vector2(81.72986, 384.81342)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="objects_for_game/parked_cars/StaticBody2D" unique_id=52103241]
+position = Vector2(0.2701404, 2.6865826)
+scale = Vector2(2.25, 1.6666636)
+texture = ExtResource("8_1wqe7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_for_game/parked_cars/StaticBody2D" unique_id=1736142472]
+position = Vector2(0.2701416, -0.8134155)
+shape = SubResource("RectangleShape2D_7qkgc")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="objects_for_game/parked_cars" unique_id=132933790]
+y_sort_enabled = true
+position = Vector2(368, 386)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="objects_for_game/parked_cars/StaticBody2D2" unique_id=1317194909]
+position = Vector2(0.2701404, 2.6865826)
+scale = Vector2(2.25, 1.6666636)
+texture = ExtResource("8_1wqe7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_for_game/parked_cars/StaticBody2D2" unique_id=1675473931]
+position = Vector2(0.2701416, -0.8134155)
+shape = SubResource("RectangleShape2D_7qkgc")
+
+[node name="Sprite2D" type="Sprite2D" parent="objects_for_game" unique_id=46849741]
+position = Vector2(232.86292, 548.1315)
+scale = Vector2(1.1620986, 0.581824)
+texture = ExtResource("10_xa83o")
+
+[node name="charbinger" parent="." unique_id=1918559002 instance=ExtResource("11_jylbp")]
+
+[connection signal="timeout" from="timers/tim" to="." method="_on_timer_timeout"]
+[connection signal="body_shape_entered" from="invisible_triggers_or_borders/hello" to="invisible_triggers_or_borders/hello" method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="invisible_triggers_or_borders/hello" to="invisible_triggers_or_borders/hello" method="_on_body_shape_exited"]
+[connection signal="body_entered" from="invisible_triggers_or_borders/finish" to="." method="_on_finish_body_entered"]
+[connection signal="body_entered" from="invisible_triggers_or_borders/finish" to="invisible_triggers_or_borders/finish" method="_on_body_entered"]

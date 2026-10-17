@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cc7qeydpm37do"]
+
+[ext_resource type="Texture2D" uid="uid://bkgrir378horu" path="res://graphics/player/player_simple.png" id="1_0a7ex"]
+[ext_resource type="AudioStream" uid="uid://b7yir467mbkeb" path="res://audio/fahhh_KcgAXfs.mp3" id="2_yhegf"]
+
+[node name="ded_screen" type="Control" unique_id=8965953]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=31216443]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2509804, 0.27058825, 0.7921569, 1)
+
+[node name="PlayerSimple" type="Sprite2D" parent="." unique_id=1718356971]
+position = Vector2(548.85535, 506.09064)
+rotation = -0.9948377
+scale = Vector2(18.129198, 15.142857)
+texture = ExtResource("1_0a7ex")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=98809943]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 516.0
+offset_right = 546.0
+offset_bottom = 526.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=250788935]
+layout_mode = 0
+offset_left = 514.0
+offset_top = 495.0
+offset_right = 526.0
+offset_bottom = 555.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=1017465803]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 469.0
+offset_right = 577.0
+offset_bottom = 479.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="." unique_id=1583973412]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 448.0
+offset_right = 557.0
+offset_bottom = 508.0
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=567996581]
+stream = ExtResource("2_yhegf")
+autoplay = true
+
+[node name="Label" type="Label" parent="." unique_id=2049750065]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.058000002
+anchor_right = 0.95500004
+anchor_bottom = 0.35300002
+offset_left = 0.18399811
+offset_right = -0.16003418
+offset_bottom = 0.2559967
+theme_override_font_sizes/font_size = 40
+text = "GG EZ GET RECKED NOOB OLOLOLOLOLOLOLOLOL
+LOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLO
+
+"
+
+[node name="Label2" type="Label" parent="." unique_id=1241308848]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 122.0
+offset_right = 1029.0
+offset_bottom = 259.0
+text = "L + ratio + wrong + get a job + unfunny + you fell off + never liked you anyway + cope + ur allergic to gluten + don't care + 
+cringe ur a kid + literally shut the $@#$ up + galileo did it better + your avi was made in MS Excel + ur bf is kinda ugly +
+ i have more subscribers + owned"

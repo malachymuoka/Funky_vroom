@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://bon7pwl7igwes"]
+
+[ext_resource type="Script" uid="uid://cv34v6apud2w1" path="res://chu_coin.gd" id="1_2m6wf"]
+[ext_resource type="Texture2D" uid="uid://n5fbsfimaii0" path="res://graphics/stuff_I_made/coin1_16x16.png" id="1_rwjwt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2m6wf"]
+atlas = ExtResource("1_rwjwt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4snoj"]
+atlas = ExtResource("1_rwjwt")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htch2"]
+atlas = ExtResource("1_rwjwt")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdi4k"]
+atlas = ExtResource("1_rwjwt")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymjia"]
+atlas = ExtResource("1_rwjwt")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sapfb"]
+atlas = ExtResource("1_rwjwt")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlcqn"]
+atlas = ExtResource("1_rwjwt")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b335b"]
+atlas = ExtResource("1_rwjwt")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8t6y"]
+atlas = ExtResource("1_rwjwt")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgcwy"]
+atlas = ExtResource("1_rwjwt")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8f5m"]
+atlas = ExtResource("1_rwjwt")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tjp2"]
+atlas = ExtResource("1_rwjwt")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7ngq"]
+atlas = ExtResource("1_rwjwt")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgdt3"]
+atlas = ExtResource("1_rwjwt")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfpdn"]
+atlas = ExtResource("1_rwjwt")
+region = Rect2(224, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xksxd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2m6wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4snoj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htch2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdi4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymjia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sapfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlcqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b335b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8t6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgcwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8f5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tjp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7ngq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgdt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfpdn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rwjwt"]
+radius = 7.0
+
+[node name="chu_coin" type="Node2D" unique_id=1880421783]
+script = ExtResource("1_2m6wf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1440833843]
+sprite_frames = SubResource("SpriteFrames_xksxd")
+autoplay = "default"
+frame_progress = 0.2786845
+
+[node name="Area2D" type="Area2D" parent="." unique_id=452145739]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1227606280]
+shape = SubResource("CircleShape2D_rwjwt")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

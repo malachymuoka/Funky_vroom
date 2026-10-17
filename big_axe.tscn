@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dgolidnstiype"]
+
+[ext_resource type="Texture2D" uid="uid://ctafjewrr5bfx" path="res://graphics/stuff_I_made/axe.png" id="1_wsfnq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsfnq"]
+size = Vector2(11.685614, 22.039099)
+
+[node name="BIG_AXE" type="Node2D" unique_id=2119743571]
+scale = Vector2(1.1064832, 1.1595652)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1055446303]
+position = Vector2(2.9999998, 0)
+scale = Vector2(0.05416666, 0.05249998)
+texture = ExtResource("1_wsfnq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=293443429]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1342541289]
+position = Vector2(4.640971, -4.3324637)
+rotation = 0.747001
+shape = SubResource("RectangleShape2D_wsfnq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=874907231]
+autoplay = true

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bhlfunc57sv06"]
+
+[node name="to_do" type="Node2D" unique_id=633589879]
+
+[node name="Label" type="Label" parent="." unique_id=1947956226]
+offset_right = 734.0
+offset_bottom = 640.0
+text = "1. ADD PARRY( take carbinjor out of statis
+2.
+2.25
+
+2.5 Add more Sound effects  and fix thing where extra carbinjors go away when entering the shop ( also make sure when one carbinjor dies, they all die) [done]
+SERIOUSLY I GET YOUR EXCITED BUT THIS IS IMPORTANT
+2.6 improve visual effects of cars during carbinjor taunt
+
+2.75 Add carbinjor boss fight ( basically the true ending)
+2.85 replace assests you used from the tutorial with your own
+3.go back to norm
+3.5 Get good at ray_casting
+4. TBOI!
+5. Platformer
+6. card game
+
+oct 17
+1. working on charbinjor"

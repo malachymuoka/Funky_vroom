@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bue5veqi8ur6s"]
+
+[ext_resource type="Texture2D" uid="uid://b3ikcno6attum" path="res://graphics/stuff_I_made/carbinjor-pixilart.png" id="1_fwyn1"]
+[ext_resource type="Script" uid="uid://da22ps7ah8qsk" path="res://carbinjor.gd" id="2_ukj8g"]
+[ext_resource type="Script" uid="uid://u578a8i4sm6b" path="res://thing_that_axes_things.gd" id="3_iuiqo"]
+[ext_resource type="PackedScene" uid="uid://biwvcvgjhl7fw" path="res://!.tscn" id="4_82l6q"]
+[ext_resource type="AudioStream" uid="uid://bjd02jupd58r4" path="res://audio/54427377-sword-slash-476148.mp3" id="4_w8edp"]
+[ext_resource type="AudioStream" uid="uid://cv668s3fanvsm" path="res://audio/roaring-knight-(1)-made-with-Voicemod.mp3" id="6_6ouhj"]
+[ext_resource type="AudioStream" uid="uid://kc7u3e0ahnve" path="res://audio/woman-screaming2.mp3" id="7_pmd2n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iuiqo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ukj8g"]
+radius = 72.99315
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82l6q"]
+size = Vector2(31, 22)
+
+[node name="carbinjor" type="Node2D" unique_id=371040044]
+scale = Vector2(2, 2)
+script = ExtResource("2_ukj8g")
+
+[node name="death_almighty!" type="Sprite2D" parent="." unique_id=1705165050]
+position = Vector2(-3.33786e-06, -1.19209275e-07)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_fwyn1")
+
+[node name="carbinjor" type="Area2D" parent="." unique_id=450780456]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carbinjor" unique_id=223438646]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_iuiqo")
+
+[node name="detection" type="Area2D" parent="." unique_id=2011983180]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection" unique_id=1363135861]
+shape = SubResource("CircleShape2D_ukj8g")
+
+[node name="cooldowns_for_attacks" type="Node" parent="." unique_id=2013223521]
+
+[node name="slash_cooldowns" type="Timer" parent="cooldowns_for_attacks" unique_id=1517393969]
+wait_time = 3.5
+
+[node name="delay" type="Timer" parent="cooldowns_for_attacks/slash_cooldowns" unique_id=2136969728]
+
+[node name="slash" type="Timer" parent="cooldowns_for_attacks/slash_cooldowns" unique_id=1288700974]
+wait_time = 1.5
+
+[node name="axe_spin_cooldowns" type="Timer" parent="cooldowns_for_attacks" unique_id=644373376]
+wait_time = 2.0
+
+[node name="spin_duration" type="Timer" parent="cooldowns_for_attacks/axe_spin_cooldowns" unique_id=1542853613]
+wait_time = 0.75
+
+[node name="taunt" type="Timer" parent="cooldowns_for_attacks" unique_id=1009393145]
+wait_time = 10.0
+
+[node name="charging" type="Timer" parent="cooldowns_for_attacks/taunt" unique_id=1604822694]
+wait_time = 3.0
+
+[node name="taunting" type="Timer" parent="cooldowns_for_attacks/taunt" unique_id=1856790849]
+wait_time = 3.0
+
+[node name="wait_period" type="Timer" parent="cooldowns_for_attacks" unique_id=293954196]
+wait_time = 2.0
+
+[node name="thing_that_axes_things" type="Node2D" parent="." unique_id=1545844822]
+script = ExtResource("3_iuiqo")
+
+[node name="swoosh" type="AudioStreamPlayer" parent="thing_that_axes_things" unique_id=367137225]
+stream = ExtResource("4_w8edp")
+
+[node name="!" parent="." unique_id=149546228 instance=ExtResource("4_82l6q")]
+visible = false
+position = Vector2(0, -24)
+
+[node name="charging_up" type="AudioStreamPlayer" parent="!" unique_id=1531004548]
+stream = ExtResource("6_6ouhj")
+
+[node name="manly_scream" type="AudioStreamPlayer" parent="!" unique_id=301335532]
+stream = ExtResource("7_pmd2n")
+
+[node name="hurt_box" type="Area2D" parent="." unique_id=870914596]
+collision_layer = 64
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_box" unique_id=2135392523]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_82l6q")
+
+[connection signal="area_entered" from="detection" to="." method="_on_detection_area_entered"]
+[connection signal="area_exited" from="detection" to="." method="_on_detection_area_exited"]
+[connection signal="timeout" from="cooldowns_for_attacks/slash_cooldowns" to="." method="_on_slash_cooldown_timeout"]
+[connection signal="timeout" from="cooldowns_for_attacks/slash_cooldowns/delay" to="." method="_on_delay_timeout"]
+[connection signal="timeout" from="cooldowns_for_attacks/slash_cooldowns/slash" to="." method="_on_slash_timeout"]
+[connection signal="timeout" from="cooldowns_for_attacks/axe_spin_cooldowns" to="thing_that_axes_things" method="_on_axe_spin_cooldowns_timeout"]
+[connection signal="timeout" from="cooldowns_for_attacks/axe_spin_cooldowns/spin_duration" to="thing_that_axes_things" method="_on_spin_duration_timeout"]
+[connection signal="timeout" from="cooldowns_for_attacks/taunt" to="." method="_on_taunt_timeout"]
+[connection signal="timeout" from="cooldowns_for_attacks/taunt/charging" to="." method="_on_charging_timeout"]
+[connection signal="timeout" from="cooldowns_for_attacks/taunt/taunting" to="." method="_on_taunting_timeout"]
+[connection signal="timeout" from="cooldowns_for_attacks/wait_period" to="." method="_on_wait_period_timeout"]

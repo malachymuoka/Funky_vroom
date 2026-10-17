@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://8d0kjxjsdq3s"]
+
+[ext_resource type="Script" uid="uid://c2kkwkv3aog3e" path="res://bullikin.gd" id="1_daqjf"]
+[ext_resource type="Texture2D" uid="uid://tjxf5lg8h1ss" path="res://graphics/stuff_I_made/weed-pixilart copy.png" id="2_daqjf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_daqjf"]
+size = Vector2(14, 30)
+
+[node name="bullets" type="Area2D" unique_id=402315529]
+collision_layer = 33
+collision_mask = 64
+script = ExtResource("1_daqjf")
+
+[node name="gun_collide" type="CollisionShape2D" parent="." unique_id=1516488269]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_daqjf")
+
+[node name="ded_bozo" type="Sprite2D" parent="." unique_id=1932082648]
+scale = Vector2(0.28499997, 0.34)
+texture = ExtResource("2_daqjf")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

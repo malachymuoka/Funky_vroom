@@ -1,0 +1,479 @@
+[gd_scene format=3 uid="uid://066dvh44gsao"]
+
+[ext_resource type="Script" uid="uid://cysku015krawj" path="res://shop_area.gd" id="1_x78fb"]
+[ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/objects/map.png" id="1_xd0lc"]
+[ext_resource type="PackedScene" uid="uid://bjy1c24lq0gf7" path="res://player.tscn" id="2_xehpp"]
+[ext_resource type="PackedScene" uid="uid://c72nmj1dn3m6t" path="res://second_box.tscn" id="3_7mmkt"]
+[ext_resource type="Texture2D" uid="uid://dxciltwc3sgll" path="res://graphics/objects/house2.png" id="3_dx0x2"]
+[ext_resource type="Texture2D" uid="uid://58kopy31xbf8" path="res://graphics/objects/taxi.png" id="5_ijvv1"]
+[ext_resource type="Texture2D" uid="uid://briw8mrbsul70" path="res://graphics/stuff_I_made/magic.png" id="6_x78fb"]
+[ext_resource type="Texture2D" uid="uid://beho7qo80tneo" path="res://graphics/objects/bin.png" id="7_eeqfu"]
+[ext_resource type="Texture2D" uid="uid://0jol5ner47mg" path="res://graphics/stuff_I_made/tel-pixilart.png" id="8_ijvv1"]
+[ext_resource type="Texture2D" uid="uid://c2hfibeel2w5e" path="res://graphics/stuff_I_made/sw-pixilart.png" id="8_na5ey"]
+[ext_resource type="Texture2D" uid="uid://dtbiqiv4aqi1n" path="res://graphics/stuff_I_made/speed-pixilart.png" id="9_42tux"]
+[ext_resource type="Texture2D" uid="uid://n4hnna3oupvx" path="res://graphics/stuff_I_made/tel-pixilart copy.png" id="10_6ytdt"]
+[ext_resource type="Texture2D" uid="uid://c5iy3tuxd0vaw" path="res://graphics/objects/barrier.png" id="10_tkvth"]
+[ext_resource type="Texture2D" uid="uid://bkgrir378horu" path="res://graphics/player/player_simple.png" id="11_6ytdt"]
+[ext_resource type="Texture2D" uid="uid://cgaq0qf5e0rgn" path="res://graphics/stuff_I_made/weed-pixilart.png" id="12_bwi6t"]
+[ext_resource type="Texture2D" uid="uid://b4eqi5fialw3r" path="res://graphics/stuff_I_made/carbinjor-pixilart-3.png" id="13_jg8s1"]
+[ext_resource type="Texture2D" uid="uid://bh66wjcdlbel4" path="res://graphics/stuff_I_made/carbinjor-pixilart-5.png" id="14_8ditu"]
+[ext_resource type="Texture2D" uid="uid://cyb1xfnwspr6j" path="res://graphics/stuff_I_made/tel-pixilart copy 2.png" id="14_na5ey"]
+[ext_resource type="Texture2D" uid="uid://lvadnkn6ycd5" path="res://graphics/stuff_I_made/cfr24c95a55d72aws3-3.png" id="19_3jk5a"]
+[ext_resource type="Texture2D" uid="uid://bofl3koeprddi" path="res://graphics/stuff_I_made/carbinjor-pixilart-10.png" id="20_1h7nf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_na5ey"]
+size = Vector2(16.615387, 5.0232573)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x78fb"]
+size = Vector2(12.999996, 2.7441864)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3jk5a"]
+size = Vector2(11.076923, 3.3488407)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1h7nf"]
+size = Vector2(19.84615, 5.581398)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwi6t"]
+size = Vector2(13, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jg8s1"]
+size = Vector2(37, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ditu"]
+size = Vector2(52, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5u27"]
+size = Vector2(20.854492, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3xfg"]
+size = Vector2(14.582291, 11.880783)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehqat"]
+size = Vector2(16.405037, 11.024467)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inrvo"]
+size = Vector2(20, 14.50589)
+
+[node name="shop_area" type="Node2D" unique_id=632761828]
+process_mode = 3
+script = ExtResource("1_x78fb")
+
+[node name="Map" type="Sprite2D" parent="." unique_id=1224855394]
+position = Vector2(118.99999, 550)
+scale = Vector2(1.6458334, 1.7234373)
+texture = ExtResource("1_xd0lc")
+
+[node name="House2" type="Sprite2D" parent="." unique_id=1860117690]
+position = Vector2(126, 174)
+texture = ExtResource("3_dx0x2")
+
+[node name="second_box" parent="." unique_id=2065844422 instance=ExtResource("3_7mmkt")]
+position = Vector2(60, -1)
+collision_layer = 14
+
+[node name="objects_the_player_can_buy" type="Node2D" parent="." unique_id=1193125223]
+position = Vector2(128, 59.000008)
+scale = Vector2(1.625, 3.5833333)
+
+[node name="bin_shoe" type="StaticBody2D" parent="objects_the_player_can_buy" unique_id=854325800]
+position = Vector2(-17.230768, 1.1162791)
+scale = Vector2(0.99999994, 1)
+collision_layer = 3
+
+[node name="Sprintshoes" type="Sprite2D" parent="objects_the_player_can_buy/bin_shoe" unique_id=2062909813]
+position = Vector2(-48.30769, -5.0232553)
+scale = Vector2(0.6215384, 0.28465116)
+texture = ExtResource("9_42tux")
+
+[node name="Bin3" type="Sprite2D" parent="objects_the_player_can_buy/bin_shoe" unique_id=785521267]
+position = Vector2(-48.61538, -2.2325573)
+rotation = 1.5707964
+scale = Vector2(0.33728197, 1.1510026)
+texture = ExtResource("7_eeqfu")
+
+[node name="Area_can_buy_shoe" type="Area2D" parent="objects_the_player_can_buy/bin_shoe" unique_id=1594933836]
+scale = Vector2(0.99999994, 1)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_shoe/Area_can_buy_shoe" unique_id=1043679290]
+position = Vector2(-48.3077, -2.2325573)
+shape = SubResource("RectangleShape2D_na5ey")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_shoe" unique_id=525896072]
+position = Vector2(-47.999996, -2.2325583)
+scale = Vector2(0.9999998, 1)
+shape = SubResource("RectangleShape2D_x78fb")
+
+[node name="bin_teleport" type="StaticBody2D" parent="objects_the_player_can_buy" unique_id=1365438914]
+position = Vector2(-17.230768, 4.1860466)
+scale = Vector2(0.99999994, 1)
+collision_layer = 3
+
+[node name="teleporting_powers" type="Sprite2D" parent="objects_the_player_can_buy/bin_teleport" unique_id=73459843]
+position = Vector2(-48.61539, 2.7906957)
+scale = Vector2(0.1569231, 0.06758719)
+texture = ExtResource("8_ijvv1")
+
+[node name="Bin2" type="Sprite2D" parent="objects_the_player_can_buy/bin_teleport" unique_id=2018368361]
+position = Vector2(-48.58579, 6.418604)
+rotation = 1.5707964
+scale = Vector2(0.3761909, 1.1666012)
+texture = ExtResource("7_eeqfu")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_teleport" unique_id=1592053911]
+position = Vector2(-48.000008, 6.697674)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_x78fb")
+
+[node name="Area_can_buy_tele" type="Area2D" parent="objects_the_player_can_buy/bin_teleport" unique_id=1638822567]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_teleport/Area_can_buy_tele" unique_id=1257788773]
+position = Vector2(-48.6154, 6.697674)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_na5ey")
+
+[node name="bin_buster" type="StaticBody2D" parent="objects_the_player_can_buy" unique_id=973877056]
+position = Vector2(-19.692307, 5.0232563)
+scale = Vector2(0.99999994, 1)
+collision_layer = 3
+
+[node name="Car_buster" type="Sprite2D" parent="objects_the_player_can_buy/bin_buster" unique_id=639553370]
+position = Vector2(-49.230766, 13.953487)
+scale = Vector2(1.1965812, 0.83720934)
+texture = ExtResource("8_na5ey")
+
+[node name="Bin" type="Sprite2D" parent="objects_the_player_can_buy/bin_buster" unique_id=2109488337]
+position = Vector2(-49.23077, 19.534882)
+rotation = 1.5707964
+scale = Vector2(0.33728197, 1.1510028)
+texture = ExtResource("7_eeqfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_buster" unique_id=403535340]
+position = Vector2(-49.576916, 19.534882)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_x78fb")
+
+[node name="Area_can_buy_sword" type="Area2D" parent="objects_the_player_can_buy/bin_buster" unique_id=1235735341]
+scale = Vector2(0.99999994, 1)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_buster/Area_can_buy_sword" unique_id=210731591]
+position = Vector2(-49.230778, 20.093021)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_na5ey")
+
+[node name="bin_shooter" type="StaticBody2D" parent="objects_the_player_can_buy" unique_id=597851918]
+position = Vector2(-43.07692, 25.116282)
+scale = Vector2(0.9999999, 1)
+collision_layer = 3
+
+[node name="Car_shooter" type="Sprite2D" parent="objects_the_player_can_buy/bin_shooter" unique_id=1331044697]
+position = Vector2(-0.6153856, -4.4651155)
+scale = Vector2(0.2589338, 0.12697676)
+texture = ExtResource("12_bwi6t")
+
+[node name="Bin" type="Sprite2D" parent="objects_the_player_can_buy/bin_shooter" unique_id=2041739180]
+position = Vector2(-0.43871307, -3.8146973e-06)
+rotation = 1.5707964
+scale = Vector2(0.33728197, 1.1510028)
+texture = ExtResource("7_eeqfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_shooter" unique_id=31410769]
+position = Vector2(-0.10506439, -3.8146973e-06)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_x78fb")
+
+[node name="Area_can_buy_gun" type="Area2D" parent="objects_the_player_can_buy/bin_shooter" unique_id=397850573]
+position = Vector2(0, -1.1920929e-07)
+scale = Vector2(0.99999994, 1)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_shooter/Area_can_buy_gun" unique_id=88254023]
+position = Vector2(7.6293945e-06, 1.9073486e-06)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_na5ey")
+
+[node name="bin_strength" type="StaticBody2D" parent="objects_the_player_can_buy" unique_id=2081381688]
+scale = Vector2(0.99999994, 1)
+collision_layer = 3
+
+[node name="strength" type="Sprite2D" parent="objects_the_player_can_buy/bin_strength" unique_id=1926359415]
+position = Vector2(64.00001, -7.8139534)
+scale = Vector2(0.1446154, 0.06279069)
+texture = ExtResource("14_na5ey")
+
+[node name="Bin4" type="Sprite2D" parent="objects_the_player_can_buy/bin_strength" unique_id=1709499739]
+position = Vector2(64.00001, -4.7441874)
+rotation = 1.5707964
+scale = Vector2(0.33728197, 1.1510028)
+texture = ExtResource("7_eeqfu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_strength" unique_id=295618902]
+position = Vector2(64.615395, -4.4651203)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_x78fb")
+
+[node name="Area_can_buy_str" type="Area2D" parent="objects_the_player_can_buy/bin_strength" unique_id=773178064]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_strength/Area_can_buy_str" unique_id=1252668785]
+position = Vector2(64.61539, -4.4651184)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_na5ey")
+
+[node name="bin_magic" type="StaticBody2D" parent="objects_the_player_can_buy" unique_id=1519710406]
+scale = Vector2(0.99999994, 1)
+collision_layer = 3
+collision_mask = 3
+
+[node name="MAGIC" type="Sprite2D" parent="objects_the_player_can_buy/bin_magic" unique_id=1779967829]
+position = Vector2(63.38462, 1.3953476)
+scale = Vector2(0.15076926, 0.066279076)
+texture = ExtResource("6_x78fb")
+
+[node name="Bin5" type="Sprite2D" parent="objects_the_player_can_buy/bin_magic" unique_id=1330160188]
+position = Vector2(64.00001, 4.7441845)
+rotation = 1.5707964
+scale = Vector2(0.33728197, 1.1510028)
+texture = ExtResource("7_eeqfu")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_magic" unique_id=1042594433]
+position = Vector2(64.00001, 4.7441845)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_x78fb")
+
+[node name="Area_can_buy_magic" type="Area2D" parent="objects_the_player_can_buy/bin_magic" unique_id=1944303909]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_magic/Area_can_buy_magic" unique_id=1816975351]
+position = Vector2(64.000015, 5.023253)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_na5ey")
+
+[node name="bin_dex" type="StaticBody2D" parent="objects_the_player_can_buy" unique_id=1458872947]
+scale = Vector2(0.99999994, 1)
+collision_layer = 2
+collision_mask = 3
+
+[node name="dex _(lol)" type="Sprite2D" parent="objects_the_player_can_buy/bin_dex" unique_id=1779512573]
+position = Vector2(64.00001, 10.046511)
+scale = Vector2(0.15692309, 0.068372115)
+texture = ExtResource("10_6ytdt")
+
+[node name="Bin6" type="Sprite2D" parent="objects_the_player_can_buy/bin_dex" unique_id=1486137175]
+position = Vector2(64.615395, 13.395348)
+rotation = 1.5707964
+scale = Vector2(0.33728197, 1.1510028)
+texture = ExtResource("7_eeqfu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_dex" unique_id=412317509]
+position = Vector2(65.23077, 13.395348)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_x78fb")
+
+[node name="Area_can_buy_dex" type="Area2D" parent="objects_the_player_can_buy/bin_dex" unique_id=1727102853]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_dex/Area_can_buy_dex" unique_id=1652763241]
+position = Vector2(65.230774, 13.395347)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_na5ey")
+
+[node name="bin_full_heal" type="StaticBody2D" parent="objects_the_player_can_buy" unique_id=625481039]
+position = Vector2(37.53846, 22.88372)
+collision_layer = 2
+collision_mask = 3
+
+[node name="full_heal" type="Sprite2D" parent="objects_the_player_can_buy/bin_full_heal" unique_id=970030322]
+position = Vector2(3.0517578e-05, -2.7907715)
+scale = Vector2(0.26461545, 0.11441861)
+texture = ExtResource("13_jg8s1")
+
+[node name="Bin7" type="Sprite2D" parent="objects_the_player_can_buy/bin_full_heal" unique_id=554796457]
+position = Vector2(0, -0.01663208)
+rotation = 1.5707964
+scale = Vector2(0.38877106, 1)
+texture = ExtResource("7_eeqfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_full_heal" unique_id=2144992690]
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_3jk5a")
+
+[node name="Area_can_buy_full_health" type="Area2D" parent="objects_the_player_can_buy/bin_full_heal" unique_id=1049576532]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_full_heal/Area_can_buy_full_health" unique_id=1972749455]
+position = Vector2(0.076919556, 0)
+scale = Vector2(0.9999998, 1)
+shape = SubResource("RectangleShape2D_1h7nf")
+
+[node name="bin_heal" type="StaticBody2D" parent="objects_the_player_can_buy" unique_id=1260982709]
+position = Vector2(37.53846, 15.627911)
+collision_layer = 2
+collision_mask = 3
+
+[node name="health_up!" type="Sprite2D" parent="objects_the_player_can_buy/bin_heal" unique_id=1801582365]
+position = Vector2(-0.46154785, -3.4186554)
+scale = Vector2(0.4276921, 0.16883792)
+texture = ExtResource("14_8ditu")
+
+[node name="Bin8" type="Sprite2D" parent="objects_the_player_can_buy/bin_heal" unique_id=1604793135]
+position = Vector2(0, -0.01663208)
+rotation = 1.5707964
+scale = Vector2(0.38877106, 1)
+texture = ExtResource("7_eeqfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_heal" unique_id=157355262]
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_3jk5a")
+
+[node name="Area_can_buy_full_health" type="Area2D" parent="objects_the_player_can_buy/bin_heal" unique_id=934045343]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objects_the_player_can_buy/bin_heal/Area_can_buy_full_health" unique_id=638895798]
+position = Vector2(0.076919556, 0)
+scale = Vector2(0.9999998, 1)
+shape = SubResource("RectangleShape2D_1h7nf")
+
+[node name="player" parent="." unique_id=2132431377 instance=ExtResource("2_xehpp")]
+position = Vector2(128, 97)
+scale = Vector2(0.99999994, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=129627260]
+position = Vector2(128, 40.000004)
+scale = Vector2(1.625, 3.5833333)
+collision_layer = 2
+
+[node name="stans" type="Sprite2D" parent="StaticBody2D" unique_id=1632362313]
+position = Vector2(1.2307684, -3.0697684)
+scale = Vector2(2.3076923, 1.2267442)
+texture = ExtResource("10_tkvth")
+
+[node name="PlayerSimple" type="Sprite2D" parent="StaticBody2D" unique_id=481812358]
+position = Vector2(1.2307663, 3.906973)
+scale = Vector2(0.6153846, 0.27906978)
+texture = ExtResource("11_6ytdt")
+
+[node name="shopbar2" type="Sprite2D" parent="StaticBody2D" unique_id=928037710]
+position = Vector2(11.692305, 4.744184)
+rotation = 0.5936549
+scale = Vector2(0.5004488, 0.9987193)
+skew = 0.6813494
+texture = ExtResource("7_eeqfu")
+
+[node name="shopbar3" type="Sprite2D" parent="StaticBody2D" unique_id=703601955]
+position = Vector2(-9.230766, 4.7441874)
+rotation = -0.5936549
+scale = Vector2(0.5004488, 0.9987193)
+skew = -0.6813496
+texture = ExtResource("7_eeqfu")
+
+[node name="shopbar1" type="Sprite2D" parent="StaticBody2D" unique_id=161825495]
+position = Vector2(1.2307663, 6.418602)
+rotation = 1.5707964
+scale = Vector2(0.33728197, 1.1510028)
+texture = ExtResource("7_eeqfu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1778988822]
+position = Vector2(0, 5.302326)
+polygon = PackedVector2Array(3.6923065, 0.279068, 6.7692337, -0.2790718, 14.153847, -2.790699, 17.230766, -1.1162806, 6.7692337, 2.2325573, -4.3076935, 2.2325573, -16, -1.1162806, -12.3076935, -3.069769, -3.6923065, -1.9073486e-06)
+
+[node name="leave_shop" type="Area2D" parent="." unique_id=1695956396]
+collision_layer = 2
+
+[node name="Taxi_pic" type="Sprite2D" parent="leave_shop" unique_id=1479792982]
+position = Vector2(127, 143)
+texture = ExtResource("5_ijvv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leave_shop" unique_id=1841068554]
+position = Vector2(126.5, 142)
+shape = SubResource("RectangleShape2D_bwi6t")
+
+[node name="sell_all_bin" type="StaticBody2D" parent="." unique_id=795357989]
+position = Vector2(264, 147)
+collision_layer = 3
+
+[node name="Bin" type="Sprite2D" parent="sell_all_bin" unique_id=1546188430]
+position = Vector2(1.5258789e-05, -1.25)
+scale = Vector2(4.5, 2.1363637)
+texture = ExtResource("7_eeqfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sell_all_bin" unique_id=1426635785]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_jg8s1")
+
+[node name="Sell_bin" type="Area2D" parent="sell_all_bin" unique_id=715190298]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sell_all_bin/Sell_bin" unique_id=927880215]
+position = Vector2(-3, -1)
+shape = SubResource("RectangleShape2D_8ditu")
+
+[node name="gate" type="Node2D" parent="." unique_id=230293941]
+position = Vector2(63.999996, 28)
+scale = Vector2(1.6458334, 1.7234373)
+
+[node name="ColorRect" type="ColorRect" parent="gate" unique_id=2056779446]
+offset_left = -6.6835403
+offset_top = -4.0616455
+offset_right = 7.2911453
+offset_bottom = 4.6419067
+color = Color(0, 0, 0, 1)
+
+[node name="candle1" type="Sprite2D" parent="gate" unique_id=1946776989]
+position = Vector2(-12.151897, -9.283772)
+scale = Vector2(0.07898731, 0.08413414)
+texture = ExtResource("19_3jk5a")
+
+[node name="candle2" type="Sprite2D" parent="gate" unique_id=1640601630]
+position = Vector2(13.974683, -9.283772)
+scale = Vector2(0.07898731, 0.08413414)
+texture = ExtResource("19_3jk5a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="gate" unique_id=1233413827]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gate/StaticBody2D" unique_id=1167021521]
+position = Vector2(-13.36709, -6.9628296)
+scale = Vector2(0.6157403, 1.1964198)
+shape = SubResource("RectangleShape2D_n5u27")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="gate/StaticBody2D" unique_id=1832576191]
+position = Vector2(13.711609, -6.9628296)
+scale = Vector2(0.61574036, 1.1964197)
+shape = SubResource("RectangleShape2D_n5u27")
+
+[node name="to_parther_world" type="Area2D" parent="gate" unique_id=126461724]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gate/to_parther_world" unique_id=50048890]
+position = Vector2(0, 0.30133057)
+scale = Vector2(0.9635397, -0.73445976)
+shape = SubResource("RectangleShape2D_h3xfg")
+
+[node name="lock" type="Node2D" parent="gate" unique_id=1366831501]
+
+[node name="lock_sprite" type="Sprite2D" parent="gate/lock" unique_id=2068134754]
+position = Vector2(0.18228751, 0.38792467)
+scale = Vector2(0.27584782, 0.16631229)
+texture = ExtResource("20_1h7nf")
+
+[node name="thing_thats_obviously_needed" type="StaticBody2D" parent="gate/lock" unique_id=1433739748]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gate/lock/thing_thats_obviously_needed" unique_id=1604174188]
+position = Vector2(0.30381775, 0.29011536)
+scale = Vector2(1.0000002, 1)
+shape = SubResource("RectangleShape2D_ehqat")
+
+[node name="lock_interact_Area" type="Area2D" parent="gate/lock" unique_id=4259501]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gate/lock/lock_interact_Area" unique_id=1422524068]
+position = Vector2(0, 0.29011536)
+scale = Vector2(1.0000002, 1)
+shape = SubResource("RectangleShape2D_inrvo")

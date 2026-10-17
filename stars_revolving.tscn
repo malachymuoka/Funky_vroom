@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c12cf5v8bc1bu"]
+
+[ext_resource type="Texture2D" uid="uid://cqd4ew0veojvk" path="res://graphics/stuff_I_made/cfr24c95a55d72aws3-2.png" id="1_wh014"]
+[ext_resource type="Script" uid="uid://cpwpw21q2x13r" path="res://stars_revolving.gd" id="2_r82xl"]
+
+[node name="stars_Revolving" type="Node2D" unique_id=2114813001]
+script = ExtResource("2_r82xl")
+
+[node name="Cfr24c95a55d72Aws32" type="Sprite2D" parent="." unique_id=1688882351]
+position = Vector2(2.0000002, 3.0000002)
+scale = Vector2(0.16166668, 0.15583336)
+texture = ExtResource("1_wh014")

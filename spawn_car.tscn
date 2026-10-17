@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bitqha7c4lsdx"]
+
+[ext_resource type="Script" uid="uid://dwfhxhpyjqyn7" path="res://spawn_car.gd" id="1_bwnam"]
+
+[node name="spawn_car" type="Node2D" unique_id=426670935]
+script = ExtResource("1_bwnam")
+
+[node name="Timer" type="Timer" parent="." unique_id=60416185]
+wait_time = 1.67
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
